@@ -118,11 +118,10 @@
 		F41E3A7B2A6E6EF30086CF6C /* MyCalc */ = {
 			isa = PBXGroup;
 			children = (
+				F4FC77FD2A6F218200AE657D /* Services */,
 				F41E3A7C2A6E6EF30086CF6C /* MyCalcApp.swift */,
 				F41E3A802A6E6EF40086CF6C /* Assets.xcassets */,
 				F41E3A822A6E6EF40086CF6C /* Preview Content */,
-				F401ACF22A6E8FC000AF75D4 /* MainCoordinator.swift */,
-				F420CEEF2A6EC4D200BA08CF /* ServiceLocator.swift */,
 				F4E7932B2A6EA403005F4C00 /* TabView.swift */,
 			);
 			path = MyCalc;
@@ -171,6 +170,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4FC77FD2A6F218200AE657D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F401ACF22A6E8FC000AF75D4 /* MainCoordinator.swift */,
+				F420CEEF2A6EC4D200BA08CF /* ServiceLocator.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

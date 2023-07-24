@@ -47,6 +47,7 @@ final class ServiceLocator {
     }
 }
 
+// Useless
 @propertyWrapper
 struct Injected<T> {
     private let service: T
