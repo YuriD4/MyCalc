@@ -8,6 +8,7 @@
 import SwiftUI
 import Environment
 import Networking
+import MCCalculator
 
 @main
 struct MyCalcApp: App {
@@ -22,9 +23,9 @@ struct MyCalcApp: App {
         environment = .prod
         #endif
         
-        ServiceLocator.shared.register((any NetworkReachabilityManager).self,
-                                       lifetime: .singleton,
-                                       factory: { NetworkReachabilityManagerImpl() })
+        ServiceLocator.shared.register((any NetworkReachabilityManager).self, lifetime: .singleton, factory: { NetworkReachabilityManagerImpl() })
+        ServiceLocator.shared.register(CalculatorService.self, lifetime: .singleInstance, factory: { CalculatorServiceImpl() })
+        ServiceLocator.shared.register(CalcToggleManager.self, lifetime: .singleInstance, factory: { CalcToggleManagerImpl() })
         
         _mainCoordinator = StateObject(wrappedValue: MainCoordinator(environment: environment))
     }

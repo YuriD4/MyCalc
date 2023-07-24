@@ -25,10 +25,11 @@ class MainCoordinator: Coordinator {
     
     init(environment: APPEnvironment) {
         self.environment = environment
-        
-        let networkReachabilityManager = serviceLocator.resolve((any NetworkReachabilityManager).self)
-        
-        calculatorCoordinator = CalculatorCoordinator(environment: environment, networkReachabilityManager: networkReachabilityManager)
+                
+        calculatorCoordinator = CalculatorCoordinator(environment: environment,
+                                                      networkReachabilityManager: serviceLocator.resolve((any NetworkReachabilityManager).self),
+                                                      featureToggleManager: serviceLocator.resolve(CalcToggleManager.self),
+                                                      calculatorService: serviceLocator.resolve(CalculatorService.self))
         settingsCoordinator = SettingsCoordinator(environment: environment)
         
         children = [AnyCoordinator(calculatorCoordinator), AnyCoordinator(settingsCoordinator)]

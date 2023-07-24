@@ -15,10 +15,18 @@ public final class CalculatorCoordinator: Coordinator {
     
     private let environment: APPEnvironment
     private let networkReachabilityManager: any NetworkReachabilityManager
+    private let featureToggleManager: CalcToggleManager
+    private let calculatorService: CalculatorService
     
-    public init(environment: APPEnvironment, networkReachabilityManager: any NetworkReachabilityManager) {
+    public init(environment: APPEnvironment,
+                networkReachabilityManager: any NetworkReachabilityManager,
+                featureToggleManager: CalcToggleManager,
+                calculatorService: CalculatorService)
+    {
         self.environment = environment
         self.networkReachabilityManager = networkReachabilityManager
+        self.featureToggleManager = featureToggleManager
+        self.calculatorService = calculatorService
     }
     
     public func start() -> some View {
