@@ -26,6 +26,7 @@ struct MyCalcApp: App {
         ServiceLocator.shared.register((any NetworkReachabilityManager).self, lifetime: .singleton, factory: { NetworkReachabilityManagerImpl() })
         ServiceLocator.shared.register(CalculatorService.self, lifetime: .singleInstance, factory: { CalculatorServiceImpl() })
         ServiceLocator.shared.register(CalcToggleManager.self, lifetime: .singleInstance, factory: { CalcToggleManagerImpl() })
+        ServiceLocator.shared.register(APIManager.self, lifetime: .singleInstance, factory: { APIManagerImpl() })
         
         _mainCoordinator = StateObject(wrappedValue: MainCoordinator(environment: environment))
     }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Networking
 
 struct OperationPad: View {
     @ObservedObject var viewModel: CalculatorViewModel
@@ -39,6 +40,6 @@ struct OperationButton: View {
 // Preview
 struct OperationPad_Previews: PreviewProvider {
     static var previews: some View {
-        OperationPad(viewModel: CalculatorViewModel(calculatorService: CalculatorServiceImpl(),         featureToggleManager: CalcToggleManagerImpl()))
+        OperationPad(viewModel: CalculatorViewModel(calculatorService: CalculatorServiceImpl(), featureToggleManager: CalcToggleManagerImpl(), apiManager: APIManagerImpl(), networkManager: NetworkReachabilityManagerImpl(), environment: .prod))
     }
 }

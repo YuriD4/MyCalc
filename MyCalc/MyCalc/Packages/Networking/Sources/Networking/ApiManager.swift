@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-public class APIManager {
+public protocol APIManager {
+    func send<T: APIRequest>(_ request: T) -> AnyPublisher<T.Response, ApiError>
+}
+
+public class APIManagerImpl: APIManager {
     private let defaultHeaders: [String: String] = ["Content-Type": "application/json"]
 
     public init() {

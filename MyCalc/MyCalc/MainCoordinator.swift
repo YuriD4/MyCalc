@@ -29,7 +29,8 @@ class MainCoordinator: Coordinator {
         calculatorCoordinator = CalculatorCoordinator(environment: environment,
                                                       networkReachabilityManager: serviceLocator.resolve((any NetworkReachabilityManager).self),
                                                       featureToggleManager: serviceLocator.resolve(CalcToggleManager.self),
-                                                      calculatorService: serviceLocator.resolve(CalculatorService.self))
+                                                      calculatorService: serviceLocator.resolve(CalculatorService.self),
+                                                      apiManager: serviceLocator.resolve(APIManager.self))
         settingsCoordinator = SettingsCoordinator(environment: environment)
         
         children = [AnyCoordinator(calculatorCoordinator), AnyCoordinator(settingsCoordinator)]

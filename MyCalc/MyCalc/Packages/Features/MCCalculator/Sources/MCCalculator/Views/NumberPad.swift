@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Networking
 
 struct NumberPad: View {
     @ObservedObject var viewModel: CalculatorViewModel
@@ -62,6 +63,6 @@ struct NumberButton: View {
 // Preview
 struct NumberPad_Previews: PreviewProvider {
     static var previews: some View {
-        NumberPad(viewModel: CalculatorViewModel(calculatorService: CalculatorServiceImpl(), featureToggleManager: CalcToggleManagerImpl()))
+        NumberPad(viewModel: CalculatorViewModel(calculatorService: CalculatorServiceImpl(), featureToggleManager: CalcToggleManagerImpl(), apiManager: APIManagerImpl(), networkManager: NetworkReachabilityManagerImpl(), environment: .prod))
     }
 }

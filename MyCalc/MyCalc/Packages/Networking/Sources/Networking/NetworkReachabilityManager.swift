@@ -8,13 +8,17 @@
 import Network
 import Combine
 
-public protocol NetworkReachabilityManager: ObservableObject {
-    var isConnected: Bool { get }
+public protocol NetworkReachabilityManager {
+    var isConnectedPublisher: AnyPublisher<Bool, Never> { get }
 }
 
 public class NetworkReachabilityManagerImpl: NetworkReachabilityManager {
     @Published public private(set) var isConnected = true
     private let monitor = NWPathMonitor()
+
+    public var isConnectedPublisher: AnyPublisher<Bool, Never> {
+        $isConnected.eraseToAnyPublisher()
+    }
 
     public init() {
         monitor.pathUpdateHandler = { [weak self] path in
@@ -26,4 +30,6 @@ public class NetworkReachabilityManagerImpl: NetworkReachabilityManager {
         monitor.start(queue: queue)
     }
 }
+
+
 
