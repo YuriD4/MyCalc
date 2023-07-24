@@ -21,7 +21,7 @@ let package = Package(
     targets: [
         .target(
             name: "MCCalculator",
-            dependencies: ["MCCoordinator"]),
+            dependencies: ["MCCoordinator", "Networking"]),
         .testTarget(
             name: "MCCalculatorTests",
             dependencies: ["MCCalculator"]),
