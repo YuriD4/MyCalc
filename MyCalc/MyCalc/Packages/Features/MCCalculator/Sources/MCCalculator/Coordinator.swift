@@ -30,7 +30,7 @@ public final class CalculatorCoordinator: Coordinator {
     }
     
     public func start() -> some View {
-        ContentView()
-            .environmentObject(self)
+        CalculatorView(viewModel: .init(calculatorService: calculatorService,
+                                        featureToggleManager: featureToggleManager))
     }
 }

@@ -15,7 +15,19 @@ public enum CalculatorOperationType {
     case divide
     case sin
     case cos
+    
+    var description: String {
+        switch self {
+        case .add: return "+"
+        case .subtract: return "-"
+        case .multiply: return "*"
+        case .divide: return "/"
+        case .sin: return "sin"
+        case .cos: return "cos"
+        }
+    }
 }
+
 
 public struct CalculatorOperation {
     let type: CalculatorOperationType
@@ -29,14 +41,16 @@ public enum CalculatorError: Error {
 }
 
 public protocol CalculatorService {
-    func performOperation(_ operation: CalculatorOperation) -> AnyPublisher<Double, CalculatorError>
+    func performOperation(_ operation: CalculatorOperation) -> AnyPublisher<String, CalculatorError>
 }
 
 public class CalculatorServiceImpl: CalculatorService {
     public init() { }
     
-    public func performOperation(_ operation: CalculatorOperation) -> AnyPublisher<Double, CalculatorError> {
-        return Future<Double, CalculatorError> { promise in
+    public func performOperation(_ operation: CalculatorOperation) -> AnyPublisher<String, CalculatorError> {
+        return Future<String, CalculatorError> { [weak self] promise in
+            guard let self else { return }
+            
             let operand1 = operation.operand1
             
             switch operation.type {
@@ -45,19 +59,22 @@ public class CalculatorServiceImpl: CalculatorService {
                     promise(.failure(.unknown))
                     return
                 }
-                promise(.success(operand1 + operand2))
+                let result = operand1 + operand2
+                promise(.success(formatResult(result)))
             case .subtract:
                 guard let operand2 = operation.operand2 else {
                     promise(.failure(.unknown))
                     return
                 }
-                promise(.success(operand1 - operand2))
+                let result = operand1 - operand2
+                promise(.success(formatResult(result)))
             case .multiply:
                 guard let operand2 = operation.operand2 else {
                     promise(.failure(.unknown))
                     return
                 }
-                promise(.success(operand1 * operand2))
+                let result = operand1 * operand2
+                promise(.success(formatResult(result)))
             case .divide:
                 guard let operand2 = operation.operand2 else {
                     promise(.failure(.unknown))
@@ -66,14 +83,32 @@ public class CalculatorServiceImpl: CalculatorService {
                 if operand2 == 0 {
                     promise(.failure(.divideByZero))
                 } else {
-                    promise(.success(operand1 / operand2))
+                    let result = operand1 / operand2
+                    promise(.success(formatResult(result)))
                 }
             case .sin:
-                promise(.success(sin(operand1)))
+                let result = sin(operand1)
+                promise(.success(formatResult(result)))
             case .cos:
-                promise(.success(cos(operand1)))
+                let result = cos(operand1)
+                promise(.success(formatResult(result)))
             }
         }
         .eraseToAnyPublisher()
+    }
+
+    private func formatResult(_ result: Double) -> String {
+        if floor(result) == result {
+            return "\(Int(result))"
+        } else {
+            return "\(result.rounded(toPlaces: 4))"
+        }
+    }
+}
+
+public extension Double {
+    func rounded(toPlaces places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 }

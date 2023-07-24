@@ -6,17 +6,17 @@
 //
 
 import Foundation
+import Combine
 
 public protocol CalcToggleManager {
-    var availableOperations: [CalculatorOperationType] { get }
+    var availableOperations: CurrentValueSubject<[CalculatorOperationType], Never> { get }
 }
 
 public class CalcToggleManagerImpl: CalcToggleManager {
-    public var availableOperations: [CalculatorOperationType] {
-        return [.add, .subtract, .multiply, .divide, .sin, .cos]
-    }
+    public var availableOperations = CurrentValueSubject<[CalculatorOperationType], Never>([.add, .subtract, .multiply, .divide, .sin, .cos])
     
     public init() {
         
     }
 }
+
