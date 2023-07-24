@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MyCalcApp: App {
+    @StateObject private var mainCoordinator = MainCoordinator()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            mainCoordinator.start()
         }
     }
 }
+

@@ -13,10 +13,13 @@ let package = Package(
             name: "MCSettings",
             targets: ["MCSettings"]),
     ],
+    dependencies: [
+        .package(path: "../../MCCoordinator")
+    ],
     targets: [
         .target(
             name: "MCSettings",
-            dependencies: []),
+            dependencies: ["MCCoordinator"]),
         .testTarget(
             name: "MCSettingsTests",
             dependencies: ["MCSettings"]),

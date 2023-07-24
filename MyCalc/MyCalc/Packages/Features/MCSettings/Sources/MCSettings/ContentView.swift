@@ -1,6 +1,6 @@
 //
-//  ContentView.swift
-//  MyCalc
+//  File.swift
+//  
 //
 //  Created by Yuri Chukhlib on 24.07.2023.
 //
@@ -13,7 +13,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Hello, Settings!")
         }
         .padding()
     }

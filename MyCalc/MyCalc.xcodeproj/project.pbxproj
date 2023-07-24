@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F401ACF12A6E884B00AF75D4 /* MCCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = F401ACF02A6E884B00AF75D4 /* MCCoordinator */; };
+		F401ACF32A6E8FC000AF75D4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401ACF22A6E8FC000AF75D4 /* MainCoordinator.swift */; };
 		F41E3A7D2A6E6EF30086CF6C /* MyCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A7C2A6E6EF30086CF6C /* MyCalcApp.swift */; };
-		F41E3A7F2A6E6EF30086CF6C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A7E2A6E6EF30086CF6C /* ContentView.swift */; };
 		F41E3A812A6E6EF40086CF6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41E3A802A6E6EF40086CF6C /* Assets.xcassets */; };
 		F41E3A842A6E6EF40086CF6C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41E3A832A6E6EF40086CF6C /* Preview Assets.xcassets */; };
 		F41E3A8E2A6E6EF40086CF6C /* MyCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A8D2A6E6EF40086CF6C /* MyCalcTests.swift */; };
@@ -37,9 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F401ACF22A6E8FC000AF75D4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F41E3A792A6E6EF30086CF6C /* MyCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41E3A7C2A6E6EF30086CF6C /* MyCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalcApp.swift; sourceTree = "<group>"; };
-		F41E3A7E2A6E6EF30086CF6C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F41E3A802A6E6EF40086CF6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F41E3A832A6E6EF40086CF6C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F41E3A892A6E6EF40086CF6C /* MyCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +49,7 @@
 		F41E3A972A6E6EF40086CF6C /* MyCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalcUITests.swift; sourceTree = "<group>"; };
 		F41E3A992A6E6EF40086CF6C /* MyCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F44E7D2B2A6E7B1500B0BB72 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = MyCalc/Packages/Networking; sourceTree = "<group>"; };
+		F46106862A6E875B000214C2 /* MCCoordinator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MCCoordinator; path = MyCalc/Packages/MCCoordinator; sourceTree = "<group>"; };
 		F4FAE42D2A6E7B9A00CB4770 /* MCSettings */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MCSettings; path = MyCalc/Packages/Features/MCSettings; sourceTree = "<group>"; };
 		F4FAE42E2A6E7BF900CB4770 /* MCCalculator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MCCalculator; path = MyCalc/Packages/Features/MCCalculator; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4FAE42C2A6E7B3900CB4770 /* Networking in Frameworks */,
+				F401ACF12A6E884B00AF75D4 /* MCCoordinator in Frameworks */,
 				F487E6892A6E7C280078E659 /* MCCalculator in Frameworks */,
 				F487E6872A6E7C240078E659 /* MCSettings in Frameworks */,
 			);
@@ -106,9 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				F41E3A7C2A6E6EF30086CF6C /* MyCalcApp.swift */,
-				F41E3A7E2A6E6EF30086CF6C /* ContentView.swift */,
 				F41E3A802A6E6EF40086CF6C /* Assets.xcassets */,
 				F41E3A822A6E6EF40086CF6C /* Preview Content */,
+				F401ACF22A6E8FC000AF75D4 /* MainCoordinator.swift */,
 			);
 			path = MyCalc;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				F44E7D2B2A6E7B1500B0BB72 /* Networking */,
 				F4FAE42D2A6E7B9A00CB4770 /* MCSettings */,
 				F4FAE42E2A6E7BF900CB4770 /* MCCalculator */,
+				F46106862A6E875B000214C2 /* MCCoordinator */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -175,6 +179,7 @@
 				F4FAE42B2A6E7B3900CB4770 /* Networking */,
 				F487E6862A6E7C240078E659 /* MCSettings */,
 				F487E6882A6E7C280078E659 /* MCCalculator */,
+				F401ACF02A6E884B00AF75D4 /* MCCoordinator */,
 			);
 			productName = MyCalc;
 			productReference = F41E3A792A6E6EF30086CF6C /* MyCalc.app */;
@@ -290,7 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F41E3A7F2A6E6EF30086CF6C /* ContentView.swift in Sources */,
+				F401ACF32A6E8FC000AF75D4 /* MainCoordinator.swift in Sources */,
 				F41E3A7D2A6E6EF30086CF6C /* MyCalcApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -904,6 +909,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F401ACF02A6E884B00AF75D4 /* MCCoordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MCCoordinator;
+		};
 		F487E6862A6E7C240078E659 /* MCSettings */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MCSettings;
