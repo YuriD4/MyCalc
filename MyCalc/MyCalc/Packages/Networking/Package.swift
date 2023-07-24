@@ -13,10 +13,13 @@ let package = Package(
             name: "Networking",
             targets: ["Networking"]),
     ],
+    dependencies: [
+        .package(path: "../Environment")
+    ],
     targets: [
         .target(
             name: "Networking",
-            dependencies: []),
+            dependencies: ["Environment"]),
         .testTarget(
             name: "NetworkingTests",
             dependencies: ["Networking"]),
