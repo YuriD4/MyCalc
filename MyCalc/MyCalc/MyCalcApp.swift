@@ -10,7 +10,12 @@ import SwiftUI
 @main
 struct MyCalcApp: App {
     @StateObject private var mainCoordinator = MainCoordinator()
+    private let serviceLocator = ServiceLocator.shared
 
+    init() {
+        
+    }
+    
     var body: some Scene {
         WindowGroup {
             mainCoordinator.start()

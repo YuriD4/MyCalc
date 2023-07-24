@@ -15,6 +15,7 @@
 		F41E3A8E2A6E6EF40086CF6C /* MyCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A8D2A6E6EF40086CF6C /* MyCalcTests.swift */; };
 		F41E3A982A6E6EF40086CF6C /* MyCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A972A6E6EF40086CF6C /* MyCalcUITests.swift */; };
 		F41E3A9A2A6E6EF40086CF6C /* MyCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A992A6E6EF40086CF6C /* MyCalcUITestsLaunchTests.swift */; };
+		F420CEF02A6EC4D200BA08CF /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420CEEF2A6EC4D200BA08CF /* ServiceLocator.swift */; };
 		F463EAF12A6EA4FD0027729D /* MCSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = F463EAF02A6EA4FD0027729D /* MCSharedUI */; };
 		F487E6872A6E7C240078E659 /* MCSettings in Frameworks */ = {isa = PBXBuildFile; productRef = F487E6862A6E7C240078E659 /* MCSettings */; };
 		F487E6892A6E7C280078E659 /* MCCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = F487E6882A6E7C280078E659 /* MCCalculator */; };
@@ -50,6 +51,7 @@
 		F41E3A932A6E6EF40086CF6C /* MyCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41E3A972A6E6EF40086CF6C /* MyCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalcUITests.swift; sourceTree = "<group>"; };
 		F41E3A992A6E6EF40086CF6C /* MyCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F420CEEF2A6EC4D200BA08CF /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		F44E7D2B2A6E7B1500B0BB72 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = MyCalc/Packages/Networking; sourceTree = "<group>"; };
 		F46106862A6E875B000214C2 /* MCCoordinator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MCCoordinator; path = MyCalc/Packages/MCCoordinator; sourceTree = "<group>"; };
 		F48D76BD2A6E9D9100A1FF0E /* MCSharedUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MCSharedUI; path = MyCalc/Packages/MCSharedUI; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				F41E3A802A6E6EF40086CF6C /* Assets.xcassets */,
 				F41E3A822A6E6EF40086CF6C /* Preview Content */,
 				F401ACF22A6E8FC000AF75D4 /* MainCoordinator.swift */,
+				F420CEEF2A6EC4D200BA08CF /* ServiceLocator.swift */,
 				F4E7932B2A6EA403005F4C00 /* TabView.swift */,
 			);
 			path = MyCalc;
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F420CEF02A6EC4D200BA08CF /* ServiceLocator.swift in Sources */,
 				F401ACF32A6E8FC000AF75D4 /* MainCoordinator.swift in Sources */,
 				F4E7932C2A6EA403005F4C00 /* TabView.swift in Sources */,
 				F41E3A7D2A6E6EF30086CF6C /* MyCalcApp.swift in Sources */,
