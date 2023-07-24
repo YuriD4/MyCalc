@@ -33,7 +33,7 @@ public struct TabViewContainer: View {
 
 struct TabView_Previews: PreviewProvider {
     static var previews: some View {
-        TabViewContainer(calculatorCoordinator: CalculatorCoordinator(),
-                         settingsCoordinator: SettingsCoordinator())
+        TabViewContainer(calculatorCoordinator: CalculatorCoordinator(environment: .dev),
+                         settingsCoordinator: SettingsCoordinator(environment: .dev))
     }
 }

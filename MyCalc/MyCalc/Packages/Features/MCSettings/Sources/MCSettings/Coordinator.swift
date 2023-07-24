@@ -7,11 +7,15 @@
 
 import SwiftUI
 import MCCoordinator
+import Environment
 
 public final class SettingsCoordinator: Coordinator {
     @Published public var children: [AnyCoordinator] = []
+    private let environment: APPEnvironment
     
-    public init() {}
+    public init(environment: APPEnvironment) {
+        self.environment = environment
+    }
     
     public func start() -> some View {
         ContentView()

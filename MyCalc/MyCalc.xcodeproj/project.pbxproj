@@ -16,6 +16,7 @@
 		F41E3A982A6E6EF40086CF6C /* MyCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A972A6E6EF40086CF6C /* MyCalcUITests.swift */; };
 		F41E3A9A2A6E6EF40086CF6C /* MyCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A992A6E6EF40086CF6C /* MyCalcUITestsLaunchTests.swift */; };
 		F420CEF02A6EC4D200BA08CF /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420CEEF2A6EC4D200BA08CF /* ServiceLocator.swift */; };
+		F448A24C2A6ED01E009D668F /* Environment in Frameworks */ = {isa = PBXBuildFile; productRef = F448A24B2A6ED01E009D668F /* Environment */; };
 		F463EAF12A6EA4FD0027729D /* MCSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = F463EAF02A6EA4FD0027729D /* MCSharedUI */; };
 		F487E6872A6E7C240078E659 /* MCSettings in Frameworks */ = {isa = PBXBuildFile; productRef = F487E6862A6E7C240078E659 /* MCSettings */; };
 		F487E6892A6E7C280078E659 /* MCCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = F487E6882A6E7C280078E659 /* MCCalculator */; };
@@ -54,6 +55,7 @@
 		F420CEEF2A6EC4D200BA08CF /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		F44E7D2B2A6E7B1500B0BB72 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = MyCalc/Packages/Networking; sourceTree = "<group>"; };
 		F46106862A6E875B000214C2 /* MCCoordinator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MCCoordinator; path = MyCalc/Packages/MCCoordinator; sourceTree = "<group>"; };
+		F48202D52A6ECFE800921E80 /* Environment */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Environment; path = MyCalc/Packages/Environment; sourceTree = "<group>"; };
 		F48D76BD2A6E9D9100A1FF0E /* MCSharedUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MCSharedUI; path = MyCalc/Packages/MCSharedUI; sourceTree = "<group>"; };
 		F4E7932B2A6EA403005F4C00 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		F4FAE42D2A6E7B9A00CB4770 /* MCSettings */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MCSettings; path = MyCalc/Packages/Features/MCSettings; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				F401ACF12A6E884B00AF75D4 /* MCCoordinator in Frameworks */,
 				F463EAF12A6EA4FD0027729D /* MCSharedUI in Frameworks */,
 				F487E6892A6E7C280078E659 /* MCCalculator in Frameworks */,
+				F448A24C2A6ED01E009D668F /* Environment in Frameworks */,
 				F487E6872A6E7C240078E659 /* MCSettings in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +161,7 @@
 				F4FAE42E2A6E7BF900CB4770 /* MCCalculator */,
 				F46106862A6E875B000214C2 /* MCCoordinator */,
 				F48D76BD2A6E9D9100A1FF0E /* MCSharedUI */,
+				F48202D52A6ECFE800921E80 /* Environment */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -191,6 +195,7 @@
 				F487E6882A6E7C280078E659 /* MCCalculator */,
 				F401ACF02A6E884B00AF75D4 /* MCCoordinator */,
 				F463EAF02A6EA4FD0027729D /* MCSharedUI */,
+				F448A24B2A6ED01E009D668F /* Environment */,
 			);
 			productName = MyCalc;
 			productReference = F41E3A792A6E6EF30086CF6C /* MyCalc.app */;
@@ -925,6 +930,10 @@
 		F401ACF02A6E884B00AF75D4 /* MCCoordinator */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MCCoordinator;
+		};
+		F448A24B2A6ED01E009D668F /* Environment */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Environment;
 		};
 		F463EAF02A6EA4FD0027729D /* MCSharedUI */ = {
 			isa = XCSwiftPackageProductDependency;

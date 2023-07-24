@@ -6,14 +6,22 @@
 //
 
 import SwiftUI
+import Environment
 
 @main
 struct MyCalcApp: App {
-    @StateObject private var mainCoordinator = MainCoordinator()
+    @StateObject private var mainCoordinator: MainCoordinator
     private let serviceLocator = ServiceLocator.shared
 
     init() {
+        var environment: APPEnvironment
+        #if DEBUG
+        environment = .dev
+        #else
+        environment = .prod
+        #endif
         
+        _mainCoordinator = StateObject(wrappedValue: MainCoordinator(environment: environment))
     }
     
     var body: some Scene {

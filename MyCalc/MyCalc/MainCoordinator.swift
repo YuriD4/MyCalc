@@ -10,16 +10,21 @@ import MCCoordinator
 import MCCalculator
 import MCSettings
 import MCSharedUI
+import Environment
 
 class MainCoordinator: Coordinator {
     @Published var children: [AnyCoordinator] = []
     
+    private let environment: APPEnvironment
+    
     private var calculatorCoordinator: CalculatorCoordinator
     private var settingsCoordinator: SettingsCoordinator
     
-    init() {
-        calculatorCoordinator = CalculatorCoordinator()
-        settingsCoordinator = SettingsCoordinator()
+    init(environment: APPEnvironment) {
+        self.environment = environment
+        print(environment)
+        calculatorCoordinator = CalculatorCoordinator(environment: environment)
+        settingsCoordinator = SettingsCoordinator(environment: environment)
         children = [AnyCoordinator(calculatorCoordinator), AnyCoordinator(settingsCoordinator)]
     }
     
