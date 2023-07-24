@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Environment
+import Networking
 
 @main
 struct MyCalcApp: App {
@@ -20,6 +21,10 @@ struct MyCalcApp: App {
         #else
         environment = .prod
         #endif
+        
+        ServiceLocator.shared.register((any NetworkReachabilityManager).self,
+                                       lifetime: .singleton,
+                                       factory: { NetworkReachabilityManagerImpl() })
         
         _mainCoordinator = StateObject(wrappedValue: MainCoordinator(environment: environment))
     }

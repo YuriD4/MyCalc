@@ -14,7 +14,9 @@ let package = Package(
             targets: ["MCCalculator"]),
     ],
     dependencies: [
-        .package(path: "../../MCCoordinator")
+        .package(path: "../../MCCoordinator"),
+        .package(path: "../../Environment"),
+        .package(path: "../../Networking")
     ],
     targets: [
         .target(

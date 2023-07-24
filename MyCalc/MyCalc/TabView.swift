@@ -30,10 +30,3 @@ public struct TabViewContainer: View {
         .tint(Color.pink)
     }
 }
-
-struct TabView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabViewContainer(calculatorCoordinator: CalculatorCoordinator(environment: .dev),
-                         settingsCoordinator: SettingsCoordinator(environment: .dev))
-    }
-}

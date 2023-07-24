@@ -31,7 +31,7 @@ final class ServiceLocator {
         configuration[key] = Service(lifetime: lifetime, factory: factory)
     }
 
-    func resolve<T>() -> T {
+    func resolve<T>(_ type: T.Type) -> T {
         let key = ObjectIdentifier(T.self)
         if let instance = services[key] as? T {
             return instance
@@ -52,7 +52,7 @@ struct Injected<T> {
     private let service: T
 
     init() {
-        self.service = ServiceLocator.shared.resolve()
+        self.service = ServiceLocator.shared.resolve(T.self)
     }
 
     var wrappedValue: T {

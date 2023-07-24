@@ -11,10 +11,13 @@ import MCCalculator
 import MCSettings
 import MCSharedUI
 import Environment
+import Networking
 
 class MainCoordinator: Coordinator {
     @Published var children: [AnyCoordinator] = []
     
+    var serviceLocator = ServiceLocator.shared
+        
     private let environment: APPEnvironment
     
     private var calculatorCoordinator: CalculatorCoordinator
@@ -22,9 +25,12 @@ class MainCoordinator: Coordinator {
     
     init(environment: APPEnvironment) {
         self.environment = environment
-        print(environment)
-        calculatorCoordinator = CalculatorCoordinator(environment: environment)
+        
+        let networkReachabilityManager = serviceLocator.resolve((any NetworkReachabilityManager).self)
+        
+        calculatorCoordinator = CalculatorCoordinator(environment: environment, networkReachabilityManager: networkReachabilityManager)
         settingsCoordinator = SettingsCoordinator(environment: environment)
+        
         children = [AnyCoordinator(calculatorCoordinator), AnyCoordinator(settingsCoordinator)]
     }
     
