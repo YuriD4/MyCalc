@@ -14,6 +14,7 @@
 		F41E3A8E2A6E6EF40086CF6C /* MyCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A8D2A6E6EF40086CF6C /* MyCalcTests.swift */; };
 		F41E3A982A6E6EF40086CF6C /* MyCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A972A6E6EF40086CF6C /* MyCalcUITests.swift */; };
 		F41E3A9A2A6E6EF40086CF6C /* MyCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41E3A992A6E6EF40086CF6C /* MyCalcUITestsLaunchTests.swift */; };
+		F4DF8DB22A6E76CE00A71659 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = F4DF8DB12A6E76CE00A71659 /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		F41E3A932A6E6EF40086CF6C /* MyCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41E3A972A6E6EF40086CF6C /* MyCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalcUITests.swift; sourceTree = "<group>"; };
 		F41E3A992A6E6EF40086CF6C /* MyCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F41E3AAF2A6E75C10086CF6C /* Networking */ = {isa = PBXFileReference; lastKnownFileType = text; path = Networking; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4DF8DB22A6E76CE00A71659 /* Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +81,7 @@
 				F41E3A8C2A6E6EF40086CF6C /* MyCalcTests */,
 				F41E3A962A6E6EF40086CF6C /* MyCalcUITests */,
 				F41E3A7A2A6E6EF30086CF6C /* Products */,
+				F4DF8DB02A6E76CE00A71659 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +98,7 @@
 		F41E3A7B2A6E6EF30086CF6C /* MyCalc */ = {
 			isa = PBXGroup;
 			children = (
+				F41E3AAF2A6E75C10086CF6C /* Networking */,
 				F41E3A7C2A6E6EF30086CF6C /* MyCalcApp.swift */,
 				F41E3A7E2A6E6EF30086CF6C /* ContentView.swift */,
 				F41E3A802A6E6EF40086CF6C /* Assets.xcassets */,
@@ -127,6 +132,13 @@
 			path = MyCalcUITests;
 			sourceTree = "<group>";
 		};
+		F4DF8DB02A6E76CE00A71659 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +155,9 @@
 			dependencies = (
 			);
 			name = MyCalc;
+			packageProductDependencies = (
+				F4DF8DB12A6E76CE00A71659 /* Networking */,
+			);
 			productName = MyCalc;
 			productReference = F41E3A792A6E6EF30086CF6C /* MyCalc.app */;
 			productType = "com.apple.product-type.application";
@@ -869,6 +884,13 @@
 			defaultConfigurationName = "Release Dev";
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4DF8DB12A6E76CE00A71659 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F41E3A712A6E6EF30086CF6C /* Project object */;
 }

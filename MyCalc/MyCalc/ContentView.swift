@@ -16,13 +16,6 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
-        .onAppear {
-            #if DEBUG
-                print("DEBUG")
-            #else
-                print("release")
-            #endif
-        }
     }
 }
 
