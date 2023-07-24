@@ -9,6 +9,7 @@ import SwiftUI
 import MCCoordinator
 import MCCalculator
 import MCSettings
+import MCSharedUI
 
 class MainCoordinator: Coordinator {
     @Published var children: [AnyCoordinator] = []
@@ -23,17 +24,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() -> some View {
-        TabView {
-            calculatorCoordinator.start()
-                .tabItem {
-                    Label("Calculator", systemImage: "")
-                }
-
-            settingsCoordinator.start()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape")
-                }
-        }
+        TabViewContainer(calculatorCoordinator: calculatorCoordinator,
+                         settingsCoordinator: settingsCoordinator)
         .environmentObject(self)
     }
 }
