@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import MyCalc
 
 final class MyCalcTests: XCTestCase {
 
